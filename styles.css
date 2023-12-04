@@ -335,72 +335,33 @@ nav a {
 .testimonials-third {
   padding-top: 15px;
 }
-
-
-
-.donor-section {
-  color: black;
-  background: #8280ff;
-  margin-top: 40;
+.donor-section{
+  padding-bottom: 20%;
 }
-
-.donor-section h2 {
-  font-size: 24px;
-  font-family: 'Asap', sans-serif;
-  
-}
-
-.donor-row {
+.donor-logos {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: center; /* Center logos */
+  align-items: center; /* Align logos vertically */
+  gap: 20px; /* Space between logos */
 }
-
-.donors {
-  padding: 1;
+.donorpic {
+  max-width: 150px; /* Maximum logo width */
+  max-height: 100px; /* Maximum logo height */
+  width: auto; /* Maintain aspect ratio */
+  height: auto; /* Maintain aspect ratio */
 }
-
-.donorpic1 {
-  width:190px;
-  border: 1px solid white;
-  position: relative;
-  padding: 10px;
-  right: 20px;
-  bottom: 40px;
+.thank-you-text {
+  text-align: center;
+  font-size: 24px;
+  margin: 20px 0;
+  font-family: ‘Asap’, sans-serif;
 }
-
-.donorpic2 {  
-  width:170px;
-  border: 1px solid white;
-  padding: 25px;
-  position: relative;
-  bottom: 60px;
-  right: 25px;
-}
-
-.donorpic3 {
-  width:180px;
-  border: 1px solid white;
-  padding: 15px;
-  position: relative;
-  bottom: 80px;
-  right: 25px;
-}
-
-.donorpic4 {
-  width:125px;
-  border: 1px solid white;
-  padding: 25px;
-  position: relative;
-  right: 5px;
-  bottom: 35px;
-}
-
-.donorpic5 {
-  width: 130px;
-  border: 1px solid white;
-  padding: 30px;
-  position: relative;
-  bottom: 45px;
+@media screen and (max-width: 600px) {
+  .donorpics {
+      max-width: 100px;
+      max-height: 70px;
+  }
 }
 
 
