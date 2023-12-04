@@ -114,7 +114,7 @@ nav a {
 
   .nav-links {
     position: absolute;
-    top: -20;
+    top: -20px;
     margin-top:75px;
     left: 0;
     display: flex;
@@ -138,7 +138,7 @@ nav a {
     height: 2rem;
     padding: 0.7rem;
     transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
-}
+}  
 
   .nav-links > li {
     display: flex;
@@ -153,7 +153,7 @@ nav a {
   .nav-links > li:not(:last-child) {
     border-bottom: 1px solid #ffffff; }
   }
-
+  
 .hero {
   background-color:#ffe780;
   padding: 130px;
