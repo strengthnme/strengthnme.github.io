@@ -1,0 +1,29 @@
+* {
+    padding: 0;
+    margin: 0;
+    border:  0;
+    box-sizing: border-box;
+    /* font-family: ; */
+
+}
+
+:root {
+    /* Global CSS Variables for the Color Palette */
+    /* --primary-background-color:  */
+    /* --secondary-background-color: */
+    /* --tetriary-background-color: */
+    /* --nav-background-color: */
+    /* --footer-background-color:  */
+    /* --text-primary-color: */
+    /* --text-secondary-color: */
+    /* --text-tetriary-color: */
+    /* --text-primary-dark:  */
+    /* --link-hover-color:  */
+    /* --error-color: */
+    /* --success-color:  */
+
+
+}
+
+/* We can also define global styles for checkboxes and radio options
+   or just add custom linking style in case we want uniformity       */
