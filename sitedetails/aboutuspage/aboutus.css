@@ -113,7 +113,7 @@ nav a {
 
   .nav-links {
     position: absolute;
-    top: -20;
+    top: -20px;
     margin-top:75px;
     left: 0;
     display: flex;
@@ -137,7 +137,7 @@ nav a {
     height: 2rem;
     padding: 0.7rem;
     transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
-}
+}  
 
   .nav-links > li {
     display: flex;
