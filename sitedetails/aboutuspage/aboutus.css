@@ -208,57 +208,68 @@ hr {
     letter-spacing: 0em;
     text-align: center;
 }
+
 .footer-custom {
-    color: white;
-    background-color: #000000;
-    z-index: 2;
-    position: relative;
+  color: white;
+  background-color: #000000;
+  z-index: 2;
+  position: relative;
+  padding: 25px;
 }
+.disclaimer {
+  font-family: 'Asap', sans-serif;
+  font-size: 16px;
+  text-align: center;
+  font-weight: normal;
+  }
 .description2 {
-    font-family: 'Asap', sans-serif;
-    font-size: 160%;
-    font-weight: normal;
-    line-height: normal;
-    letter-spacing: 0em;
-    text-align: left;
+  font-family: 'Asap', sans-serif;
+  font-size: 70%;
+  font-weight: normal;
+  line-height: normal;
+  letter-spacing: 0em;
+  text-align: center;
+  padding-left: 100px;
+  padding-right: 100px;
 }  
 .address {
-    font-family: 'Asap', sans-serif;
-    font-size: 160%;
-    font-weight: normal;
-    line-height: normal;
-    letter-spacing: 0em;
-    text-align: left; 
-    margin-right: 0;
-    margin-left: 0;
+  font-family: 'Asap', sans-serif;
+  font-size: 70%;
+  font-weight: normal;
+  line-height: normal;
+  letter-spacing: 0em;
+  text-align: center; 
 }
 .contact {
-    font-family: 'Asap', sans-serif;
-    font-size: 160%;
-    font-weight: normal;
-    line-height: normal;
-    letter-spacing: 0em;
-    text-align: center;
+  font-family: 'Asap', sans-serif;
+  font-size: 70%;
+  font-weight: normal;
+  line-height: normal;
+  letter-spacing: 0em;
+  text-align: center;
 } 
-.donate {
-  text-align:center;
-}
-.footer-bottom {
-  display: flex;
-  justify-content:space-between;
-  align-items: center;
-  margin-right: 5%;
+.no-margin {
+  margin-right: 0;
   margin-left: 0;
 }
-.no-margin {
-    margin-right: 0;
-    margin-left: 0;
-  }
+
+.d-inline-flex {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+
+.social-media {
+  margin: 0 10px;
+}
+
 .socials {
-    font-size: 40px;
+  font-size: 40px;
+}
+@media (max-width: 768px) {
+  .footer-custom .row > div {
+      align-items: start;
   }
-  @media (max-width: 768px) {
-    .footer-custom .row > div {
-        align-items: start;
-    }
-  }
+}
