@@ -155,37 +155,60 @@ nav a {
     border-bottom: 1px solid #ffffff; }
   }
 
-.hero {
-  background-color:#ffe780;
-  padding: 130px;
-  height: 150
-}
-
-.hero h1 {
-  font-size: 52px;
-  padding-right: 70px;
-  margin-top: 40;
-}
-
-.hero h3 {
-  font-size: 34px;
-  font-weight: 400;
-  padding-right: 100px;
-  margin-top: -20;
-  margin-bottom: 65;
-}
-
-.text {
-  text-align: right;
-  position: relative;
-  bottom: 420;
-}
-
-.hero img {
-  width: 350px;
-  position: relative;
-  bottom: 140;
-}
+  .hero {
+    background-color: #ffe780;
+    padding: 8% 10%; /* Using percentages for responsive padding */
+    height: auto; /* Auto height to accommodate content */
+    display: flex; /* Added to create a flex container */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center children vertically */
+    align-items: center; /* Center children horizontally for mobile view */
+    text-align: center;
+  }
+  
+  .hero img {
+    max-width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 30px; /* Add some margin below */
+  }
+  
+  
+  .hero h1, .hero h3 {
+    margin: 0; /* Reset default margins */
+  }
+  
+  .hero h1 {
+    font-size: 3em; /* Responsive font size */
+  }
+  
+  .hero h3 {
+    font-size: 2em; /* Responsive font size */
+    font-weight: 400;
+  }
+  
+  /* Media query for tablets and desktops */
+  @media (min-width: 768px) {
+    .hero {
+      padding: 130px; /* Larger padding for larger screens */
+      flex-direction: row; /* Lay out children in a row */
+      justify-content: space-between; /* Align children with space between */
+      align-items: center; /* Center children vertically */
+      text-align: left; /* Align text to left for larger screens */
+    }
+  
+    .hero img {
+      max-width: none; /* Remove max-width */
+      width: 350px; /* Fixed width for larger screens */
+    }
+  
+    .text {
+      /* Adjust the order of text and image if needed */
+      order: 2; /* Will position the text block after the image if they are flex items */
+      margin-left: 30px; /* Add space between the image and the text */
+    }
+  }
+  
+  
 
 .mission {
   text-align: center;
@@ -231,95 +254,48 @@ nav a {
   font-weight:700;
 }
 
-.carousel-one {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: visible;
-  padding: 10;
-}
 
-.carousel-inner-one {
-  display: flex;
-  flex-direction: row; /* Change the direction to column */
-  justify-content: space-around;
-  transition: transform 0.5s ease;
-}
 
-.carousel-one-item {
-  display: flex;
-  flex-direction: column; /* Change the direction to row */
-  align-items: center;
-  flex: 1;
-}
 
-.team img {
-  position: relative;
-  left: 10;
-  max-width: 50%;
-  height: auto;
-}
 
-.team a {
-  text-decoration: none;
-  color: #333;
-  font-size: 24px;
-  cursor: pointer;
-  align-items: center;
-  position: relative;
-}
 
-.team img {
-  width: 500px;
-  position: relative;
-  align-items: center;
-
-}
-
-.back {
-  right: 700;
-}
-
-.forward {
-  left: 200;
-}
 
 
 
 .testimonials {
   color: black;
   background: white;
-  margin-top: 40;
+  margin-top: 40px; /* Ensure proper units are used */
 }
 
 .testimonials h2 {
   text-align: center;
-  padding: 50 50 30 50
+  padding: 50px; /* Uniform padding for all sides */
 }
 
 .testimonials h3 {
   text-align: center;
-  font-size: 18px;
-  font-weight: 400;
+  font-size: 18px; /* Ensure font-size has a unit */
+  font-weight: 400; /* Standard weight for normal text */
 }
 
 .testimonials-wrapper {
   gap: 28px;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  position:relative;
-  padding: 50 120 50 120
+  flex-wrap: wrap; /* Allows items to wrap to the next row */
+  justify-content: space-between; /* Distributes items evenly */
+  align-items: stretch; /* Stretches items to fill the container */
+  position: relative;
+  padding: 50px 120px; /* Uniform horizontal and vertical padding */
 }
 
 .testimonials-list-item {
   text-align: center;
-  width: 400px;
-  min-height: 500px;
-  border: 2px solid #8280ff;
+  flex: 1; /* Allows items to grow and take available space */
+  border: 2px solid #8280FF; /* Specify a color for the border */
   padding: 45px;
-  border-radius: 10px;
-  box-sizing: border-box;
+  border-radius: 10px; /* Rounded corners */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 .testimonials-first {
@@ -335,6 +311,7 @@ nav a {
 .testimonials-third {
   padding-top: 15px;
 }
+
 .donor-section{
   padding-bottom: 20%;
 }
@@ -355,7 +332,7 @@ nav a {
   text-align: center;
   font-size: 24px;
   margin: 20px 0;
-  font-family: ‘Asap’, sans-serif;
+  font-family: "Asap", sans-serif;
 }
 @media screen and (max-width: 600px) {
   .donorpics {
