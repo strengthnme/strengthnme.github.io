@@ -217,9 +217,11 @@ nav a {
 }
 
 .mission h2{
-  font-size:24px;
-  font-weight:700;
-  margin-top: 40;
+  font-weight: 800; /* Extra bold font weight */
+  font-size: 2.5rem; /* Large font size for emphasis */
+  color: black; /* A deep blue color for a strong presence */
+  text-transform: uppercase; /* Transform text to uppercase for uniformity */
+  letter-spacing: 0.1em; /* Add spacing between letters for readability */
 }
 
 .mission h2:after {
@@ -270,8 +272,10 @@ nav a {
   display: block;
 }
 #ourteam {
-  font-size: 24px; /* Example font size, adjust as needed */
-  font-weight: bold; /* Example font weight */
+  font-weight: 800; /* Extra bold font weight */
+  font-size: 2.5rem; /* Large font size for emphasis */
+  color: black; /* A deep blue color for a strong presence */
+  letter-spacing: 0.1em; /* Add spacing between letters for readability */
   margin: 0; /* Remove default margin */
   padding: 20px 0; /* Add some padding at the top and bottom */
   /* Other styles specific to the 'Our Team' heading */
@@ -368,7 +372,11 @@ nav a {
 
 .testimonials h2 {
   text-align: center;
-  padding: 50px; /* Uniform padding for all sides */
+  font-weight: 800; /* Extra bold font weight */
+  font-size: 2.5rem; /* Large font size for emphasis */
+  color: black; /* A deep blue color for a strong presence */
+  text-transform: uppercase; /* Transform text to uppercase for uniformity */
+  letter-spacing: 0.1em; /* Add spacing between letters for readability */
 }
 
 .testimonials h3 {
@@ -416,7 +424,11 @@ nav a {
   /* Other styles for the donor-section container */
 }
 
-.thank-you {
+#thank {
+  font-weight: 800; /* Extra bold font weight */
+  font-size: 2.5rem; /* Large font size for emphasis */
+  color: black; /* A deep blue color for a strong presence */
+  letter-spacing: 0.1em; /* Add spacing between letters for readability */
   text-align: center; /* Center-align this specific text */
   margin: 0 auto; /* Center the element horizontally */
   padding: 20px 0; /* Add some padding at the top and bottom */
@@ -428,65 +440,118 @@ nav a {
 
 .donor-logos {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* Center logos */
-  align-items: center; /* Align logos vertically */
-  gap: 20px; /* Space between logos */
-}
-.donorpic {
-  max-width: 150px; /* Maximum logo width */
-  max-height: 100px; /* Maximum logo height */
-  width: auto; /* Maintain aspect ratio */
-  height: auto; /* Maintain aspect ratio */
+  flex-wrap: nowrap; /* Ensure logos are in a single line */
+  animation: scroll 100s linear infinite; /* Adjust the time as needed for a smooth scroll */
+  animation-duration: 100s; 
 }
 
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Move to the left by the total width of a single set of images */
+    /* This needs to be calculated based on the actual width of all unique images plus their margins */
+    transform: translateX(calc(-12 * (100px + 20px)));
+  }
+}
+
+/* Remove any margin or padding that might introduce space */
+.donorpic:last-child {
+  margin-right: 0; /* Remove margin on the last image if there was any */
+}
+
+/* Image styling */
+.donorpic {
+  flex: 0 0 auto;
+  max-width: 150px; /* or your preferred size */
+  max-height: 100px; /* or your preferred size */
+  margin-right: 20px; /* Adjust the space between logos */
+}
+.donorpic:last-child {
+  margin-right: 0; /* Remove margin on the last image if there was any */
+}
+
+
+.donor-logos {
+  animation: scroll 10s linear infinite; /* Adjust time as needed */
+}
+
+/* Pause animation on hover */
+.donor-logos:hover {
+  animation-play-state: paused;
+}
 
 .programs {
-  background: #ffe780;
-  padding: 20px;
+    background: #ffe780;
+    padding: 20px;
+    display: flex; /* Use flex to center the child vertically */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
+    min-height: 100vh; /* Minimum height to take full viewport height */
 }
 
 .programs h2 {
-  font-size: 24px;
-  font-weight: 700;
-  text-align: center;
-  padding: 50px 50px 30px 50px;
+  font-weight: 800; /* Extra bold font weight */
+  font-size: 2.5rem; /* Large font size for emphasis */
+  color: black; /* A deep blue color for a strong presence */
+  text-transform: uppercase; /* Transform text to uppercase for uniformity */
+  letter-spacing: 0.1em; /* Add spacing between letters for readability */
+    text-align: center;
+    margin-bottom: 20px; /* Space below the header */
 }
 
 .carousel-container-two {
   position: relative;
-  height: 300px; /* Height of visible area */
-  overflow: hidden;
+  width: 100%; /* Full width of its parent */
+  max-width: 768px; /* Max width to prevent too wide on large screens */
+  overflow: hidden; /* Hide overflow */
+  margin: 0 auto; /* Center the carousel */
 }
 
 .carousel-two {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  transition: transform 0.5s ease;
+    width: 100%; /* Full width of its parent */
+    transition: transform 0.5s ease; /* Smooth transition for the sliding effect */
+    
 }
 
 .carousel-two-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 300px;
-  width: 100%;
+    width: 100%; /* Full width of its parent */
+    display: none; /* Hide all items by default */
+    text-align: center; /* Center the text */
+    box-sizing: border-box; /* Border-box for proper sizing */
+    display: flex; /* Enable flex for direct children */
+    flex-direction: column; /* Stack elements on top of each other for mobile */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    transition: transform 0.5s ease; /* Smooth transition for transform */
 }
 
-.programs img {
-  width: 250px;
+/* Responsive image styles */
+.carousel-two-item img {
+    max-width: 100%; /* Full width on small screens */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Space below the image */
 }
 
 .carousel-program {
-  font-size: 20px;
+  font-size: 1.25rem; /* Responsive font size */
   font-weight: 550;
+  margin-top: 10px;
+  text-align: center; /* Center-align for better readability */
 }
 
 .carousel-description {
-  font-size: 17px;
+  font-size: 1rem; /* Slightly smaller font for the description */
   font-weight: 300;
-  margin-top: 10px;
+  line-height: 1.5; /* Improve readability */
+  padding: 0 15px; /* Padding for smaller screens */
+  text-align: justify; /* Justify text for better alignment */
+}
+
+.left {
+  padding: 10px;
 }
 
 .arrow-up, .arrow-down {
@@ -510,18 +575,47 @@ nav a {
   transform: scale(1.1); /* Slightly enlarge the button on hover */
 }
 
-/* Additional style to separate the arrows from the carousel */
-.arrow-up {
-  margin-bottom: 5px;
+@media (min-width: 768px) {
+  .carousel-two-item {
+      flex-direction: row; /* Side-by-side on larger screens */
+      align-items: stretch; /* Stretch items to fill the container */
+  }
+
+  .carousel-program {
+      font-size: 1.5rem; /* Slightly larger font for bigger screens */
+  }
+
+  .carousel-description {
+      font-size: 1.25rem;
+      padding: 0 30px; /* More padding on larger screens */
+  }
+
+  .programs img {
+      max-width: 50%; /* Limit image size on larger screens */
+  }
+
+  .left {
+      max-width: 50%; /* Limit text container width */
+  }
 }
 
-.arrow-down {
-  margin-top: 5px;
+@media (min-width: 768px) {
+  .carousel-two-item {
+      flex-direction: row; /* Lay items out in a row on larger screens */
+      justify-content: center; /* Center content horizontally */
+      align-items: center; /* Center content vertically */
+  }
+
+  .programs img {
+      max-width: 100%; /* Limit image width */
+      max-height: 100%; /* Ensure image is not taller than the carousel item */
+      object-fit: contain; /* Prevent image distortion */
+  }
+
+  .left {
+      padding: 1rem; /* Padding around the text */
+      max-width: 100%; /* Limit text width */
+  }
 }
-
-
-
-
-
 
 
