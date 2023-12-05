@@ -229,15 +229,31 @@ nav a {
   letter-spacing: 0.1em; /* Add spacing between letters for readability */
 }
 
-.mission h2:after {
+/* Base Style for Subheadings */
+.mission h2, .vision h2, .values h2 {
+  position: relative; /* Position relative to allow absolute positioning of pseudo-elements */
+  cursor: pointer; /* Optional: Changes the cursor on hover to indicate interactivity */
+}
+
+/* After Pseudo-element for the Line */
+.mission h2:after, .vision h2:after, .values h2:after {
   content: '';
   display: block;
-  background: #3c00ff;
+  background: #3c00ff; /* Color of the line */
   height: 5px;
-  width: 30%;
-  margin: auto;
-  margin-top: 15;
+  width: 0; /* Start with no width */
+  position: absolute; /* Position absolutely within the h2 */
+  bottom: -10px; /* Position below the h2 */
+  left: 50%; /* Start from the middle */
+  transition: width 0.3s ease, left 0.3s ease; /* Transition for the animation */
 }
+
+/* Hover Effect */
+.mission h2:hover:after, .vision h2:hover:after, .values h2:hover:after {
+  width: 30%; /* Expand to 30% width on hover */
+  left: 35%; /* Adjust left position to start the line from the left edge */
+}
+
 
 .mission p{
   font-size: 17px;
@@ -276,14 +292,33 @@ nav a {
   margin: 10px auto; /* Center the buttons */
   display: block;
 }
-#ourteam {
+
+#main #ourteam {
+  position: relative; /* Position relative for pseudo-element positioning */
+  cursor: pointer; /* Optional: Changes the cursor on hover to indicate interactivity */
+  display: inline-block;
   font-weight: 800; /* Extra bold font weight */
   font-size: 2.5rem; /* Large font size for emphasis */
   color: black; /* A deep blue color for a strong presence */
   letter-spacing: 0.1em; /* Add spacing between letters for readability */
-  margin: 0; /* Remove default margin */
-  padding: 20px 0; /* Add some padding at the top and bottom */
-  /* Other styles specific to the 'Our Team' heading */
+
+}
+
+#main #ourteam:after {
+  content: '';
+  display: block;
+  background: #3c00ff; /* Color of the line */
+  height: 5px;
+  width: 0; /* Start with no width */
+  position: absolute; /* Position absolutely within the h1 */
+  bottom: -10px; /* Position below the h1 */
+  left: 50%; /* Start from the middle */
+  transition: width 0.3s ease, left 0.3s ease; /* Transition for the animation */
+}
+
+#main #ourteam:hover:after {
+  width: 100%; /* Expand to 100% width on hover */
+  left: 0; /* Adjust left position to start the line from the left edge */
 }
 
 
@@ -359,32 +394,45 @@ nav a {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-.testimonials {
-  color: black;
-/* Light background for contrast */
-  margin-top: 40px;
-  padding: 20px;
-}
-
+/* Base Style for the Testimonials Header */
 .testimonials h2 {
+  padding-top: 5%;
   text-align: center;
   font-weight: 800;
   font-size: 2.5rem;
   color: black;
+  cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  margin-bottom: 20px; /* Add space below the heading */
+  margin: 0 0 5% 20px; /* Center the heading and add space below */
+  position: relative; /* Position relative for pseudo-element positioning */
+  display: block; /* Use block to ensure it takes full width */
 }
+
+/* After Pseudo-element for the Line */
+.testimonials h2:after {
+  content: '';
+  display: block;
+  background: #3c00ff; /* Color of the line */
+  height: 5px;
+  width: 0; /* Start with no width */
+  position: absolute; /* Position absolutely within the h2 */
+  bottom: -20px; /* Adjust bottom position to place the line below h2 */
+  left: 0; /* Set left to 0 */
+  right: 0; /* Set right to 0 */
+  margin: auto; /* Auto margins for horizontal centering */
+  transition: width 0.3s ease; /* Transition for the animation */
+}
+
+/* Hover Effect */
+.testimonials h2:hover:after {
+  width: 40%; /* Expand to 100% width on hover */
+  /* left and right remain 0, margin:auto keeps it centered */
+}
+
+
+
+
 
 .testimonials h3 {
   text-align: center;
@@ -424,6 +472,47 @@ nav a {
   padding: 60px 30px; /* Uniform padding for all testimonials */
 }
 
+/* Text Styling */
+.testimonials p {
+  color: #333; /* Darker color for better readability */
+  margin-bottom: 15px; /* Space between paragraphs */
+  line-height: 1.5; /* Improved line spacing for readability */
+}
+
+.name {
+  color: #6C63FF; /* A contrasting color for names */
+  font-weight: 600; /* Slightly bolder for emphasis */
+  margin-bottom: 10px; /* Space after the name */
+}
+
+.testimonials em {
+  color: #555; /* Slightly lighter color for testimonial text */
+  font-style: italic; /* Italicize for emphasis */
+  display: block; /* Display as block for proper spacing */
+  position: relative; /* Position relative for pseudo-elements */
+  padding: 20px; /* Padding around testimonial text */
+  background: #f0f0f0; /* Light background for the testimonial */
+  border-left: 4px solid #8280FF; /* Border to highlight */
+  margin: 20px 0; /* Margin for spacing around the testimonial */
+}
+
+.testimonials em:before, .testimonials em:after {
+  content: '“'; /* Opening quote */
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #8280FF; /* Color of the quotes */
+  font-size: 2em; /* Larger size for quotes */
+}
+
+.testimonials em:after {
+  content: '”'; /* Closing quote */
+  right: 10px;
+  left: auto;
+  top: auto;
+  bottom: 10px;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .testimonials-wrapper {
@@ -436,6 +525,10 @@ nav a {
 
   .testimonials h3 {
     font-size: 16px; /* Smaller sub-heading on smaller screens */
+  }
+
+  .testimonials p, .name, .testimonials em {
+    font-size: 14px; /* Smaller font size for smaller screens */
   }
 }
 
@@ -454,9 +547,32 @@ nav a {
   text-align: center; /* Center-align this specific text */
   margin: 0 auto; /* Center the element horizontally */
   padding: 20px 0; /* Add some padding at the top and bottom */
-  display: block; /* Ensure the element is a block-level element for proper centering */
   width: 100%; /* Full width to ensure centering takes effect */
   /* Additional styling for the 'THANK YOU TO' heading */
+  display: block; /* Ensure the element is a block-level element for proper centering */
+  position: relative; /* Set position relative for pseudo-elements */
+  cursor: pointer; /* Change cursor to indicate hover state */
+  margin-bottom: 5%;
+}
+
+/* Pseudo-element for the underline */
+#thank:after {
+  content: '';
+  display: block;
+  background: #3c00ff; /* Color of the line */
+  height: 5px;
+  width: 0; /* Start with no width */
+  position: absolute; /* Position absolutely within the h2 */
+  bottom: -20px; /* Position below the h2 */
+  left: 0;
+  right: 0;
+  margin: auto; /* Center the line */
+  transition: width 0.3s ease; /* Smooth transition for the line width */
+}
+
+/* Hover effect to reveal the line */
+#thank:hover:after {
+  width: 65%; /* Expand line to full width on hover */
 }
 
 
@@ -526,29 +642,28 @@ nav a {
 
 .carousel-container-two {
   position: relative;
-  width: 100%; /* Full width of its parent */
-  max-width: 768px; /* Max width to prevent too wide on large screens */
-  overflow: hidden; /* Hide overflow */
-  margin: 0 auto; /* Center the carousel */
+  width: 100%;
+  max-width: 768px;
+  overflow: hidden;
+  margin: 0 auto;
 }
 
 .carousel-two {
-    width: 100%; /* Full width of its parent */
-    transition: transform 0.5s ease; /* Smooth transition for the sliding effect */
-    
+  width: 100%;
+  transition: transform 0.5s ease;
 }
 
 .carousel-two-item {
-    width: 100%; /* Full width of its parent */
-    display: none; /* Hide all items by default */
-    text-align: center; /* Center the text */
-    box-sizing: border-box; /* Border-box for proper sizing */
-    display: flex; /* Enable flex for direct children */
-    flex-direction: column; /* Stack elements on top of each other for mobile */
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    transition: transform 0.5s ease; /* Smooth transition for transform */
+  width: 100%;
+  display: flex; /* This will now display the item, make sure to control display through JS */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  min-height: 500px; /* Adjust this value as needed to fit the content */
+  transition: transform 0.5s ease;
 }
+
 
 /* Responsive image styles */
 .carousel-two-item img {
