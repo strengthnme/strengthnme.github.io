@@ -15,7 +15,7 @@ nav {
   font-style: normal;
   font-size: 19px;
   font-weight: 400;
-  padding: 20px;
+  padding: 10px;
     position: fixed; /* Fix the navbar to the top */
   top: 0; /* Align to the top */
   left: 0; /* Align to the left */
