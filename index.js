@@ -14,36 +14,31 @@ btn3.onclick = function () {
 
 document.addEventListener('DOMContentLoaded', function () {
     const carousel = document.querySelector('.carousel-two');
+    const items = document.querySelectorAll('.carousel-two-item');
     const arrowUp = document.querySelector('.arrow-up');
     const arrowDown = document.querySelector('.arrow-down');
     let currentItem = 0;
-    const totalItems = carousel.children.length;
 
-    const updateCarousel = () => {
-        const transformValue = -currentItem * 300; // Height of each item
-        carousel.style.transform = `translateY(${transformValue}px)`;
+    // Function to change the item visibility
+    const changeItem = (index) => {
+        items.forEach(item => item.style.display = 'none'); // Hide all items
+        items[index].style.display = 'block'; // Show only the active item
     };
 
+    // Initially display the first item
+    changeItem(currentItem);
+
     arrowUp.addEventListener('click', () => {
-        if (currentItem === 0) {
-            // If at the first item, go to the last item
-            currentItem = totalItems - 1;
-        } else {
-            currentItem--;
-        }
-        updateCarousel();
+        currentItem = (currentItem > 0) ? currentItem - 1 : items.length - 1;
+        changeItem(currentItem);
     });
 
     arrowDown.addEventListener('click', () => {
-        if (currentItem < totalItems - 1) {
-            currentItem++;
-        } else {
-            // If at the last item, go back to the first item
-            currentItem = 0;
-        }
-        updateCarousel();
+        currentItem = (currentItem < items.length - 1) ? currentItem + 1 : 0;
+        changeItem(currentItem);
     });
 });
+
 
 
 
