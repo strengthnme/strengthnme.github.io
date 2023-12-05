@@ -2,6 +2,7 @@ body {
   font-family: 'Asap';
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 nav {
@@ -254,6 +255,95 @@ nav a {
   font-weight:700;
 }
 
+#main {
+  width: 100%; /* Ensure the container spans full width */
+  text-align: center; /* Center-align text for all child elements */
+  /* Other styles for main container */
+}
+
+#ourteam {
+  font-size: 24px; /* Example font size, adjust as needed */
+  font-weight: bold; /* Example font weight */
+  margin: 0; /* Remove default margin */
+  padding: 20px 0; /* Add some padding at the top and bottom */
+  /* Other styles specific to the 'Our Team' heading */
+}
+
+
+.slider_container {
+  position: relative;
+  max-width: 800px; /* Max width for larger screens */
+  margin: auto; /* Center the container */
+  height: auto; /* Adjust height automatically */
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  transition: 0.9s;
+}
+
+.slider img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  background-size: cover; /* Cover might work better than 100% 100% */
+  background-position: center;
+}
+
+.indicator {
+  position: absolute;
+  display: flex;
+  cursor: pointer;
+  left: 50%;
+  bottom: 10%; /* Adjust as per need */
+  transform: translate(-50%, -50%);
+}
+
+.dots {
+  background-color: #fff;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  transition: 0.8s;
+  margin-left: 8px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.dots:hover {
+  background-color: #add4ee;
+}
+
+/* Responsive Media Queries */
+@media only screen and (max-width: 768px) {
+  .slider_container {
+    max-width: 95%; /* More fluid on smaller screens */
+  }
+
+  .indicator {
+    bottom: 5%; /* Adjust for smaller screens */
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .slider_container {
+    max-width: 90%; /* Even smaller margin for very small screens */
+  }
+
+  .indicator {
+    bottom: 10px; /* Fixed position for very small screens */
+  }
+
+  .dots {
+    height: 10px; /* Smaller dots for small screens */
+    width: 10px;
+  }
+}
+
+
+
+
 
 
 
@@ -312,9 +402,22 @@ nav a {
   padding-top: 15px;
 }
 
-.donor-section{
-  padding-bottom: 20%;
+.donor-section {
+  width: 100%; /* Ensure the container spans full width */
+  text-align: center; /* Center-align text for all child elements */
+  /* Other styles for the donor-section container */
 }
+
+.thank-you {
+  text-align: center; /* Center-align this specific text */
+  margin: 0 auto; /* Center the element horizontally */
+  padding: 20px 0; /* Add some padding at the top and bottom */
+  display: block; /* Ensure the element is a block-level element for proper centering */
+  width: 100%; /* Full width to ensure centering takes effect */
+  /* Additional styling for the 'THANK YOU TO' heading */
+}
+
+
 .donor-logos {
   display: flex;
   flex-wrap: wrap;
@@ -328,26 +431,7 @@ nav a {
   width: auto; /* Maintain aspect ratio */
   height: auto; /* Maintain aspect ratio */
 }
-.thank-you-text {
-  text-align: center;
-  font-size: 24px;
-  margin: 20px 0;
-  font-family: "Asap", sans-serif;
-}
-@media screen and (max-width: 600px) {
-  .donorpics {
-      max-width: 100px;
-      max-height: 70px;
-  }
-}
 
-
-@media screen and (max-width: 600px) {
-  .donorpics {
-    width: 50px;
-    height: 50px;
-  }
-}
 
 .programs{
   background:#ffe780;
