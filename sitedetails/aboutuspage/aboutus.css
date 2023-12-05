@@ -15,6 +15,11 @@ nav {
   font-size: 19px;
   font-weight: 400;
   padding: 20px;
+    position: fixed; /* Fix the navbar to the top */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  right: 0; /* Stretch across the full width */
+  z-index: 1000;
 }
 
 nav a {
