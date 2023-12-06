@@ -177,10 +177,9 @@ nav a {
 
 .contactusdesc {
     font-size: 21px;
-    margin-top:0cm;
-    margin-bottom: 0cm;
+    margin: 0 0;
     line-height: 36.67px;
-    text-align:center;
+    text-align: center;
     padding: 10px;
     font-family: 'Asap', sans-serif;
     letter-spacing: 0em;
