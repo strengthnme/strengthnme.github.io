@@ -172,7 +172,8 @@ nav a {
     font-weight: 700;
     line-height: 300px;
     letter-spacing: 0em;
-    text-align: center; 
+    text-align: center;
+    padding-top: 30px;
 }
 .about-info{
     text-align: center;
