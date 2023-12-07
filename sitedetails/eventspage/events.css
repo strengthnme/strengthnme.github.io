@@ -53,6 +53,26 @@ nav a {
   align-items: center;
 }
 
+.upcoming-container {
+  text-align: center;
+}
+
+.upcoming {
+  font-size: 24px; /* Adjust the font size as needed */
+}
+
+.upcomingevents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upcomingpic {
+  margin: 0 10px; /* Adjust the margin between the images as needed */
+  width: 40%; /* Set the desired width for the images */
+  height: auto; /* Maintain aspect ratio */
+}
+
 .menu-button {
   display: none;
   background: none;
