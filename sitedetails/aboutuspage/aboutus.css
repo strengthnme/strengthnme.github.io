@@ -278,3 +278,35 @@ hr {
       align-items: start;
   }
 }
+
+/* For tablets */
+@media (max-width: 768px) {
+  .about-section {
+    font-size: 48px; /* smaller font size */
+    line-height: 150px; /* adjust line height */
+  }
+  .founder-pics {
+    flex-direction: column; /* stack images vertically */
+  }
+  .who-we-are {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  /* other responsive styles */
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+  .about-section {
+    font-size: 24px;
+    line-height: 120px;
+  }
+  .section1, .melinda, .monique {
+    font-size: 20px;
+  }
+  .who-we-are {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  /* other responsive styles */
+}
