@@ -162,18 +162,40 @@ nav a {
     font-weight: normal;
     margin-top: 5%;
 }
+
+
 .about-section {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: #FFD000;
-    font-family: 'Asap', sans-serif;
-    font-size: 96px;
-    font-weight: 700;
-    line-height: 300px;
-    letter-spacing: 0em;
-    text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #FFD000;
+  font-family: 'Asap', sans-serif;
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 300px;
+  letter-spacing: 0em;
+  margin-top: 0;
+  text-align: center;
+  padding-top: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .about-section {
+    font-size: 72px; /* Adjusted font size */
+    line-height: 200px; /* Adjusted line height */
+    height: 200px; /* Adjusted height */
     padding-top: 30px;
+  }
+}
+
+/* Media query for mobile devices */
+@media screen and (max-width: 480px) {
+  .about-section {
+    font-size: 48px; /* Further adjusted font size */
+    line-height: 150px; /* Adjusted line height */
+    height: 150px; /* Adjusted height */
+    padding-top: 30px;
+  }
 }
 .about-info{
     text-align: center;
