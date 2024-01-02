@@ -533,11 +533,6 @@ nav a {
 }
 
 
-.donor-section {
-  width: 100%; /* Ensure the container spans full width */
-  text-align: center; /* Center-align text for all child elements */
-  /* Other styles for the donor-section container */
-}
 
 #thank {
   font-weight: 800; /* Extra bold font weight */
@@ -575,50 +570,30 @@ nav a {
   width: 65%; /* Expand line to full width on hover */
 }
 
-
 .donor-logos {
   display: flex;
-  flex-wrap: nowrap; /* Ensure logos are in a single line */
-  animation: scroll 100s linear infinite; /* Adjust the time as needed for a smooth scroll */
-  animation-duration: 100s; 
+  flex-wrap: wrap;
+  justify-content: center; /* Center logos */
+  align-items: center; /* Align logos vertically */
+  gap: 20px; /* Space between logos */
 }
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    /* Move to the left by the total width of a single set of images */
-    /* This needs to be calculated based on the actual width of all unique images plus their margins */
-    transform: translateX(calc(-12 * (100px + 20px)));
-  }
-}
-
-/* Remove any margin or padding that might introduce space */
-.donorpic:last-child {
-  margin-right: 0; /* Remove margin on the last image if there was any */
-}
-
-/* Image styling */
 .donorpic {
-  flex: 0 0 auto;
-  max-width: 150px; /* or your preferred size */
-  max-height: 100px; /* or your preferred size */
-  margin-right: 20px; /* Adjust the space between logos */
-}
-.donorpic:last-child {
-  margin-right: 0; /* Remove margin on the last image if there was any */
+  max-width: 200px; /* Maximum logo width */
+  max-height: 150px; /* Maximum logo height */
+  width: auto; /* Maintain aspect ratio */
+  height: auto; /* Maintain aspect ratio */
 }
 
 
-.donor-logos {
-  animation: scroll 10s linear infinite; /* Adjust time as needed */
+@media screen and (max-width: 600px) {
+  .donorpics {
+      max-width: 100px;
+      max-height: 70px;
+  }
 }
 
-/* Pause animation on hover */
-.donor-logos:hover {
-  animation-play-state: paused;
-}
+
+
 
 .programs {
     background: #ffe780;
